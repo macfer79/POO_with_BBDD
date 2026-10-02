@@ -1,8 +1,6 @@
 package hotel;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.List;
 
 public class Cliente {
 
@@ -86,14 +84,6 @@ public class Cliente {
     //toString
     @Override
     public String toString() {
-        return "Cliente{" +
-                "idCliente=" + idCliente +
-                ", nombre='" + nombre + '\'' +
-                ", apellidos='" + apellidos + '\'' +
-                ", fechaNacimiento=" + fechaNacimiento +
-                ", codigoPostal=" + codigoPostal +
-                ", email='" + email + '\'' +
-                ", telefono='" + telefono + '\'' +
-                '}';
+        return STR."Cliente{idCliente=\{idCliente}, nombre='\{nombre}', apellidos='\{apellidos}', fechaNacimiento=\{fechaNacimiento}, codigoPostal=\{codigoPostal}, email='\{email}', telefono='\{telefono}'}";
     }
 }

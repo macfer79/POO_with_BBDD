@@ -82,14 +82,6 @@ public class Habitacion {
     //toString
     @Override
     public String toString() {
-        return "Habitacion{" +
-                "idHabitacion=" + idHabitacion +
-                ", numero=" + numero +
-                ", planta=" + planta +
-                ", tipo='" + tipo + '\'' +
-                ", categoria='" + categoria + '\'' +
-                ", precioPorNoche=" + precioPorNoche +
-                ", disponible=" + disponible +
-                '}';
+        return STR."Habitacion{idHabitacion=\{idHabitacion}, numero=\{numero}, planta=\{planta}, tipo='\{tipo}', categoria='\{categoria}', precioPorNoche=\{precioPorNoche}, disponible=\{disponible}}";
     }
 }

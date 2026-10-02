@@ -64,12 +64,6 @@ public class Reserva {
     //toString
     @Override
     public String toString() {
-        return "Reserva{" +
-                "idReserva=" + idReserva +
-                ", fechaEntrada=" + fechaEntrada +
-                ", fechaSalida=" + fechaSalida +
-                ", precioTotal=" + precioTotal +
-                ", estado='" + estado + '\'' +
-                '}';
+        return STR."Reserva{idReserva=\{idReserva}, fechaEntrada=\{fechaEntrada}, fechaSalida=\{fechaSalida}, precioTotal=\{precioTotal}, estado='\{estado}'}";
     }
 }

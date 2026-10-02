@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class GestionClientes {
 
-    private ArrayList<Cliente> clientes;
+    private final ArrayList<Cliente> clientes;
 
     public GestionClientes(ArrayList<Cliente> clientes) {
         this.clientes = clientes;

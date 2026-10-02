@@ -84,14 +84,6 @@ public class Hotel {
     //toString
     @Override
     public String toString() {
-        return "Hotel{" +
-                "idHotel=" + idHotel +
-                ", nombre='" + nombre + '\'' +
-                ", direccion='" + direccion + '\'' +
-                ", codigoPostal=" + codigoPostal +
-                ", email='" + email + '\'' +
-                ", telefono='" + telefono + '\'' +
-                ", estrellas=" + estrellas +
-                '}';
+        return STR."Hotel{idHotel=\{idHotel}, nombre='\{nombre}', direccion='\{direccion}', codigoPostal=\{codigoPostal}, email='\{email}', telefono='\{telefono}', estrellas=\{estrellas}}";
     }
 }
