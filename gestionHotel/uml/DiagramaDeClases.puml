@@ -1,0 +1,80 @@
+@startuml
+title Gestión de Hotel
+
+class Cliente {
+    ' Atributos (Variables)
+        - idCliente: int
+        - nombre: String
+        - apellidos: String
+        - fechaNacimiento: Date
+        - codigoPostal: int
+        - email: String
+        - telefono: String
+
+    ' Métodos (Funciones)
+        + realizarReserva(): Reserva
+        + cancelarReserva(): void
+}
+
+class Hotel {
+
+    ' Atributos (Variables)
+        - idHotel: int
+        - nombre: String
+        - direccion: String
+        - codigoPostal: int
+        - email: String
+        - telefono: String
+        - estrellas: int
+
+    ' Métodos (Funciones)
+        + buscarHabitacion(): Habitacion
+        + mostrarDisponibilidad(): void
+}
+
+class Habitacion {
+
+    ' Atributos (Variables)
+        - idHabitacion: int
+        - numero: int
+        - planta: int
+        - tipo: String
+        - categoria: String
+        - precioPorNoche: double
+        - disponible: boolean
+
+    ' Métodos (Funciones)
+        + comprobarDisponibilidad(): boolean
+        + cambiarDisponibilidad(estado: boolean): void
+}
+
+class Reserva {
+
+    ' Atributos (Variables)
+        - idReserva: int
+        - fechaEntrada: Date
+        - fechaSalida: Date
+        - precioTotal: double
+        - estado: String
+
+    ' Métodos (Funciones)
+        + calcularPrecio(): double
+        + confirmar(): void
+        + cancelar(): void
+}
+
+Hotel -right[hidden]-> Reserva
+Cliente -up[hidden]-> Reserva
+Reserva -down[hidden]-> Cliente
+Habitacion -right[hidden]-> Cliente
+
+/'Hotel → Habitación: 1 hotel contiene 1..* habitaciones. Se usa composición (*--) porque estamos modelando las habitaciones como parte del hotel.'/
+Hotel "1  " *-- "1..*  " Habitacion : contiene
+/'Cliente → Reserva: un cliente puede tener 0..* reservas, pero cada reserva pertenece a un cliente.'/
+Cliente "1   " -- "0..*   " Reserva : realiza
+/'Reserva → Habitación: cada reserva está asociada a una habitación. Una habitación puede participar en muchas reservas a lo largo del tiempo.'/
+Reserva "0..* " --> "1   " Habitacion : asigna
+/'Hotel → Reserva: un hotel gestiona múltiples reservas.'/
+Hotel "1   " -- "0..*" Reserva : gestiona
+
+@enduml
