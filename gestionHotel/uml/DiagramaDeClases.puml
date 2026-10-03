@@ -63,10 +63,17 @@ class Reserva {
         + cancelar(): void
 }
 
+class GestionClientes {
+- clientes : ArrayList<Cliente>
+
++ añadirCliente(cliente : Cliente) : void
++ listarClientes() : void
+'+ buscarCliente(texto : String) : Cliente
+'+ modificarCliente(cliente : Cliente) : void
+'+ eliminarCliente(id : int) : void
+}
+
 Hotel -right[hidden]-> Reserva
-Cliente -up[hidden]-> Reserva
-Reserva -down[hidden]-> Cliente
-Habitacion -right[hidden]-> Cliente
 
 /'Hotel → Habitación: 1 hotel contiene 1..* habitaciones. Se usa composición (*--) porque estamos modelando las habitaciones como parte del hotel.'/
 Hotel "1  " *-- "1..*  " Habitacion : contiene
@@ -76,5 +83,7 @@ Cliente "1   " -- "0..*   " Reserva : realiza
 Reserva "0..* " --> "1   " Habitacion : asigna
 /'Hotel → Reserva: un hotel gestiona múltiples reservas.'/
 Hotel "1   " -- "0..*" Reserva : gestiona
+/'GestionClientes → Cliente: GestionClientes administra multiples clientes.'/
+GestionClientes "1" *-- "0..*" Cliente : administra
 
 @enduml
