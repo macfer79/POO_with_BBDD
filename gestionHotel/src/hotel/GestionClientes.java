@@ -10,7 +10,7 @@ public class GestionClientes {
         this.clientes = clientes;
     }
 
-    public void incluirCliente(Cliente cliente) {
+    public void añadirCliente(Cliente cliente) {
         clientes.add(cliente);
     }
 
